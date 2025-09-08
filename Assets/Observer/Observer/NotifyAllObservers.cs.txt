@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NotifyObservers : MonoBehaviour,NotifyAllObservers
+{
+     //Observado _observado;
+      [SerializeField] LifeSubstracter lifeSubstracter;
+
+     
+     void Update()
+     {
+
+      if (lifeSubstracter.life == 0)
+         {
+             NotifyAll();
+                print("Notificando Observers");
+         }
+         
+     }
+
+    public void NotifyAll()
+    {
+       if (Observado.Instance.ObserversAmount.Count != 0)
+       {
+           for (int d = 0; d < Observado.Instance.ObserversAmount.Count; d++)
+           {
+           Observado.Instance.ObserversAmount[d].Notified();
+           }
+           print("Notificados todos los observers");
+
+       }
+    
+    }
+    
+
+    
+}
