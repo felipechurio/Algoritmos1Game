@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface OnNotified 
+public interface NotifyAllObservers
 {
-    public void Notified();
+    public void NotifyAll();
 }

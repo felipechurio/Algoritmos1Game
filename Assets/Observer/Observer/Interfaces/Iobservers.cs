@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ObserverUnsubscribes
+public interface Iobservers
 {
-    public void ObserverUnsubscriber();
-    
+    public void Notified();
 }

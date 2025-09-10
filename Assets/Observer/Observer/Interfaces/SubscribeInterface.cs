@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ObserverSubscriber
+public interface SubscribeInterface
 {
-    public void ObserverSubscribes();
+    public void SubscribeObserver();
 }

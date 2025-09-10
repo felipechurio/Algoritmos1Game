@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class EventKilledSound : MonoBehaviour
 {
-       [SerializeField] private MonoBehaviour KilledPlayer;
-         private InterfaceKillerSound KilledSound;
+    [SerializeField] private PlayKilledSounds killedPlayer; // Clase concreta
+
+    private InterfaceKillerSound KilledSound;
 
     void Start()
     {
-        KilledSound = (InterfaceKillerSound)KilledPlayer;
-        
-
-        EventsTypes.Killed += KilledSound.PlayKilledSound;
+        KilledSound = killedPlayer; // ya es InterfaceKillerSound
+        EventsTypes.EventSubscribe("Killed", KilledSound.PlayKilledSound);
     }
 
     private void OnDestroy()
