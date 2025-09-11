@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubscribeUnsubscribe : MonoBehaviour,SubscribeInterface,UnSubscribeInterface
+public class SubscribeUnsubscribe : MonoBehaviour
 {
 
     public Iobservers observers;
