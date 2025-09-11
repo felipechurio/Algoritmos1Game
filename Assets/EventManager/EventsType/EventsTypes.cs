@@ -7,11 +7,6 @@ public  static class EventsTypes
 {
     public static Dictionary<string,Action> EventsList = new Dictionary<string,Action>();
 
-   static public event Action LifeSubtract;
-
-   static public event Action Killed;
-
-
 
   static public void EventSubscribe(string EventName,Action FunctionName)
   {
