@@ -8,7 +8,7 @@ public class Observadopaso : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.F)) pp.NotifyAll();
+        if (Input.GetKey(KeyCode.Space)) pp.NotifyAll();
 
     }
 }

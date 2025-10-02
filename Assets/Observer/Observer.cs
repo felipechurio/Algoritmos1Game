@@ -9,7 +9,7 @@ public class Observer : MonoBehaviour,Iobservers
     public void Notified()
     {
 
-        EventsTypes.InvokeEvent("Killed");
+        EventsTypes.InvokeEvent(EventStrings.JumpSound);
 
         print("Se Invoco");
     

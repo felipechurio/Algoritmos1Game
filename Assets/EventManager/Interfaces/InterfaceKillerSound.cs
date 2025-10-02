@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface InterfaceKillerSound
+public interface IJumpSound
 {
 
-    public void PlayKilledSound();
+    public void JumpSound();
 
 }
 
