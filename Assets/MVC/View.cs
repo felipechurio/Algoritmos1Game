@@ -6,18 +6,7 @@ public class View : MonoBehaviour,ILifeSubstractSound,IhitColor
 {
     [SerializeField] AudioSource _AudioSource;
     [SerializeField] MeshRenderer _Renderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   
     public void LifeDamageSound()
     { 
        _AudioSource.Play();
