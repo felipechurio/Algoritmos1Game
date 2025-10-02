@@ -11,8 +11,6 @@ public class LifeSubstracter : MonoBehaviour,InterfaceLifeSubstract
 
          LifeSubstracters();
 
-         
-
      }
         
 
@@ -24,7 +22,5 @@ public class LifeSubstracter : MonoBehaviour,InterfaceLifeSubstract
             life= life -1;
 
         }
-       
-
     }
 }
