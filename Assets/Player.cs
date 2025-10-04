@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             controller.CheckDamage();
+            StartCoroutine(_view.ChangeColorDamage());
         }
 
     }
@@ -56,16 +57,12 @@ public class Player : MonoBehaviour
          model = new Model();
 
          controller = new Controller(model, _view);
-
     }
-
     // Update is called once per frame
     void Update()
     {
         controller.ProcessInputs();
         _rb.velocity = new Vector3(model.Xaxi * model.Velocity, _rb.velocity.y, model.Yaxi * model.Velocity);
-
-
 
         if (model.Grounded && model.Jump)
         {
@@ -75,8 +72,5 @@ public class Player : MonoBehaviour
 
 
         }
-
-
-
     }
 }

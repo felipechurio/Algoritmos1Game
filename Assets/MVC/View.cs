@@ -23,14 +23,10 @@ public class View : ILifeSubstractSound
 
 
 
-    public void ChangeColorDamage()
-    { 
-       _Renderer.material.color = Color.red;
-        for (float t = 0; t < 1; t += Time.deltaTime)
-        { 
-        
-
-        }
-       //_Renderer.material.color = Color.white;
+    public IEnumerator ChangeColorDamage()
+    {
+        _Renderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        _Renderer.material.color = Color.white;
     }
 }

@@ -16,24 +16,21 @@ public class Controller : Iinputs
 
     public void ProcessInputs()
     {
-        // Movimiento horizontal/vertical
+       
        _model.Xaxi = Input.GetAxis("Horizontal");
         _model.Yaxi = Input.GetAxis("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Space) && _model.Grounded)
         {
-            _model.Jump = true; // intención de salto
+            _model.Jump = true;
 
         }
     }
 
     public void CheckDamage()
     {
-        
             _model.SubtractLife();
-            _view.LifeDamageSound();
-            _view.ChangeColorDamage();
-        
+            _view.LifeDamageSound();        
     }
 
 
