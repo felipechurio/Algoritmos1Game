@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class View : ILifeSubstractSound,IhitColor
+public class View : ILifeSubstractSound
 {
 
     private AudioSource _AudioSource;
@@ -23,10 +23,14 @@ public class View : ILifeSubstractSound,IhitColor
 
 
 
-    public IEnumerator ChangeColorDamage()
+    public void ChangeColorDamage()
     { 
-       yield return new WaitForSeconds(1);
        _Renderer.material.color = Color.red;
-       _Renderer.material.color = Color.white;
+        for (float t = 0; t < 1; t += Time.deltaTime)
+        { 
+        
+
+        }
+       //_Renderer.material.color = Color.white;
     }
 }

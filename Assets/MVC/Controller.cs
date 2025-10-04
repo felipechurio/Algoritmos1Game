@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller 
-{
-    private Model model;
+public class Controller : Iinputs
+{   
+    private Model _model;
     private View _view;
 
     public Controller(Model model, View view)
     {
-        model = model;
+        _model = model;
         _view = view;
     }
 
@@ -17,28 +17,24 @@ public class Controller
     public void ProcessInputs()
     {
         // Movimiento horizontal/vertical
-       model.Xaxi = Input.GetAxis("Horizontal");
-        model.Yaxi = Input.GetAxis("Vertical");
+       _model.Xaxi = Input.GetAxis("Horizontal");
+        _model.Yaxi = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space) && model.Grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _model.Grounded)
         {
-            model.Jump = true; // intención de salto
+            _model.Jump = true; // intención de salto
+
         }
-
-
-
-
-
-
     }
 
-
-    //  if (Input.GetKeyDown(KeyCode.Space))
-    //  {
-    //   _lifeSubstract.SubtractLife();
-    //  StartCoroutine(_hitColor.ChangeColorDamage());
-    // _lifeSubstractSound.LifeDamageSound();
-    // }
+    public void CheckDamage()
+    {
+        
+            _model.SubtractLife();
+            _view.LifeDamageSound();
+            _view.ChangeColorDamage();
+        
+    }
 
 
 

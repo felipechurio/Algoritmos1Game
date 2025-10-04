@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class EventStrings 
 {
-    public const  string JumpSound = "Jump Sound";
+    public const  string ShootSound = "Shoot Sound";
 
     public const string LifeSubstracter = "Life Substracter";
 }

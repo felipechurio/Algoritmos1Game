@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
             model.Grounded = true;  // solo indica suelo
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            controller.CheckDamage();
+        }
+
     }
 
     void OnCollisionExit(Collision collision)
@@ -57,10 +63,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         controller.ProcessInputs();
-        _rb.velocity = new Vector3(-model.Xaxi * model.Velocity, _rb.velocity.y, 0);
+        _rb.velocity = new Vector3(model.Xaxi * model.Velocity, _rb.velocity.y, model.Yaxi * model.Velocity);
 
 
-       
+
+        if (model.Grounded && model.Jump)
+        {
+
+            _rb.AddForce(this.transform.up * 4, ForceMode.Impulse);
+            model.Jump = false; 
+
+
+        }
+
 
 
     }

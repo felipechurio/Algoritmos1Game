@@ -8,8 +8,9 @@ public class Observer : MonoBehaviour,Iobservers
      
     public void Notified()
     {
+        
 
-        EventsTypes.InvokeEvent(EventStrings.JumpSound);
+        EventsTypes.InvokeEvent(EventStrings.ShootSound);
 
         print("Se Invoco");
     

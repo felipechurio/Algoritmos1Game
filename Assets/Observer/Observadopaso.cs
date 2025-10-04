@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Observadopaso : MonoBehaviour
+public class ObservadoNotify : MonoBehaviour
 {
-    [SerializeField] ObservadoList pp;
+    [SerializeField] ObservadoList ObserversList;
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space)) pp.NotifyAll();
+        if (Input.GetKey(KeyCode.F)) ObserversList.NotifyAll();
 
     }
 }
