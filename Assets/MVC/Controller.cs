@@ -2,30 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class Controller 
 {
-    private ILifeSubstract _lifeSubstract;        
-    private ILifeSubstractSound _lifeSubstractSound; 
-    private IhitColor _hitColor;
+    private Model model;
+    private View _view;
 
-    [SerializeField] private Model _model;
-    [SerializeField] private View _view;
-
-    void Start()
+    public Controller(Model model, View view)
     {
-        _lifeSubstract = _model;
-        _lifeSubstractSound = _view;
-        _hitColor = _view;
-
+        model = model;
+        _view = view;
     }
 
-    void Update()
+
+    public void ProcessInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Movimiento horizontal/vertical
+       model.Xaxi = Input.GetAxis("Horizontal");
+        model.Yaxi = Input.GetAxis("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.Space) && model.Grounded)
         {
-            _lifeSubstract.SubtractLife();
-            StartCoroutine(_hitColor.ChangeColorDamage());
-            _lifeSubstractSound.LifeDamageSound();
+            model.Jump = true; // intención de salto
         }
+
+
+
+
+
+
     }
+
+
+    //  if (Input.GetKeyDown(KeyCode.Space))
+    //  {
+    //   _lifeSubstract.SubtractLife();
+    //  StartCoroutine(_hitColor.ChangeColorDamage());
+    // _lifeSubstractSound.LifeDamageSound();
+    // }
+
+
+
 }

@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class View : MonoBehaviour,ILifeSubstractSound,IhitColor
+public class View : ILifeSubstractSound,IhitColor
 {
-    [SerializeField] AudioSource _AudioSource;
-    [SerializeField] MeshRenderer _Renderer;
-   
+
+    private AudioSource _AudioSource;
+    private MeshRenderer _Renderer;
+
+    public View(AudioSource Audio, MeshRenderer Renderer)
+    {
+        _AudioSource = Audio;
+        _Renderer = Renderer;
+    }
+
+
+
     public void LifeDamageSound()
     { 
        _AudioSource.Play();
