@@ -9,7 +9,6 @@ public class Controller : Iinputs
     public Controller(Model model, View view)
     {
         _model = model;
-       // _view = view;
     }
 
 

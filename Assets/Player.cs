@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             controller.CheckDamage();
-            //StartCoroutine(_view.ChangeColorDamage());
         }
 
     }
