@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             controller.CheckDamage();
-            StartCoroutine(_view.ChangeColorDamage());
+            //StartCoroutine(_view.ChangeColorDamage());
         }
 
     }
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         _MeshRenderer = GetComponent<MeshRenderer>();
         _rb = GetComponent<Rigidbody>();
 
-        _view = new View(_Audios, _MeshRenderer);
+        _view = new View(_Audios, _MeshRenderer, this);
 
          model = new Model();
 

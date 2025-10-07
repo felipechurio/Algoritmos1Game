@@ -22,7 +22,8 @@ public class Model : ILifeSubstract
 
     public void SubtractLife()
     {
-        life = life - 1;
+        life--;
+        EventsTypes.InvokeEvent(EventStrings.PlayerDamage);
     }
 
     public void JumpPlayer(Rigidbody _rb)

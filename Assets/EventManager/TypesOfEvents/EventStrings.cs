@@ -7,4 +7,7 @@ public static class EventStrings
     public const  string ShootSound = "Shoot Sound";
 
     public const string LifeSubstracter = "Life Substracter";
+
+    public const string PlayerDamage = "Player Damage";
+
 }

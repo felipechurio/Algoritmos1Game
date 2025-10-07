@@ -5,11 +5,11 @@ using UnityEngine;
 public class Controller : Iinputs
 {
     private Model _model;
-    private View _view;
+    //private View _view;
     public Controller(Model model, View view)
     {
         _model = model;
-        _view = view;
+       // _view = view;
     }
 
 
@@ -29,7 +29,7 @@ public class Controller : Iinputs
     public void CheckDamage()
     {
             _model.SubtractLife();
-            _view.LifeDamageSound();        
+           // _view.LifeDamageSound();        
     }
 
 
