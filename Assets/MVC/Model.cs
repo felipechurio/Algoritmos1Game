@@ -11,7 +11,7 @@ public class Model : ILifeSubstract
 
     public float Velocity = 5f;
 
-    public float JumpForce;
+    public float JumpForce = 4f;
 
     public bool Jump;
 
@@ -25,5 +25,18 @@ public class Model : ILifeSubstract
         life = life - 1;
     }
 
+    public void JumpPlayer(Rigidbody _rb)
+    {
+        if (Grounded && Jump)
+        {
+            _rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            Jump = false;
+        }
+    }
 
+    public void MovePlayer(Rigidbody _rb)
+    {
+        _rb.velocity = new Vector3(Xaxi * Velocity, _rb.velocity.y, Yaxi * Velocity);
+
+    }
 }

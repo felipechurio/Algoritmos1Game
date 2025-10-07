@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
-            model.Grounded = true;  // solo indica suelo
+            model.Grounded = true; 
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -62,15 +62,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         controller.ProcessInputs();
-        _rb.velocity = new Vector3(model.Xaxi * model.Velocity, _rb.velocity.y, model.Yaxi * model.Velocity);
-
-        if (model.Grounded && model.Jump)
-        {
-
-            _rb.AddForce(this.transform.up * 4, ForceMode.Impulse);
-            model.Jump = false; 
-
-
-        }
+        model.JumpPlayer(_rb);
+        model.MovePlayer(_rb);
+       
     }
 }
