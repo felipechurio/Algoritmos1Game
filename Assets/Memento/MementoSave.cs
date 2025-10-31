@@ -6,13 +6,17 @@ public class MementoDataContainer : MonoBehaviour, SaveData
 {
     public List<object> Datas = new List<object>();
 
-    void Start()
+    void Update()
     {
-      Datas.Add(RestorationPostion);
-      Datas.Add(PlayerLife);
+        //if (player.life == 0)
+        {
+           // SaveMementoData(PlayerLife, Player.transform.position);
+
+        }
+    
     }
 
-    public Vector3 RestorationPostion = new Vector3(20,1.19f,17);
+  
 
     public int PlayerLife = 2;
 
