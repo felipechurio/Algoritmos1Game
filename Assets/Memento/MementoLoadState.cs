@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class MementoLoadState : LoadState
 {
-    public void LoadState(GameObject PlayerRef)
+    public void LoadState(SaveData Datatype,IEntity EntityType)
     {
-        //if (Datas [0] != null)
-        //PlayerRef.Life = Datas[0];
-
-        //if (Datas [1] != null)
-        //PlayerRef.transform.position = Datas[1];
+        
 
     }
-
 }

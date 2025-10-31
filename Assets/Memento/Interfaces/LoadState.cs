@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface LoadState
 {
-   public void LoadState(GameObject PlayerRef);
+   public void LoadState(SaveData Datatype, IEntity EntityType);
 }
