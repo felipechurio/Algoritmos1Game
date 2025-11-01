@@ -24,12 +24,8 @@ public class PlayerApplyMemento : MonoBehaviour
         object[] datos = new object[] { PlayerLife, Position,Rotation};
         
         if (PlayerLife <= 0)
-        {
-          //restoreEntity.RestoreEntityStates(datos);
-            
-                PlayerLife = restoreEntity.RestoreEntityStates(datos);
-            
-
+        {            
+         PlayerLife = restoreEntity.RestoreEntityStates(datos);
         }
     }
 }
