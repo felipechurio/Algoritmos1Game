@@ -6,12 +6,22 @@ public class DELETEPLAYERDAMAGE : MonoBehaviour
 {
     public PlayerApplyMemento playerApplyMemento;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             playerApplyMemento.PlayerLife -= 1;
         }
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        //if (Input.GetKeyDown(KeyCode.Space))
+       // {
+           // playerApplyMemento.PlayerLife -= 1;
+       // }
     }
 }
