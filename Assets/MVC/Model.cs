@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Model : ILifeSubstract
+public class Model : ILifeSubstract, IPlayerStats
 {
+    public float GetVelocity() => Velocity;
+    public float GetJumpForce() => JumpForce;
 
     public float Xaxi = 5f;
 
