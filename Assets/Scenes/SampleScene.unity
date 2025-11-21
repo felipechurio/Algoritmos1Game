@@ -438,7 +438,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2d1371c82d6402049857587dbfe3c9ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -667,6 +667,9 @@ GameObject:
   - component: {fileID: 900936811}
   - component: {fileID: 900936813}
   - component: {fileID: 900936812}
+  - component: {fileID: 900936818}
+  - component: {fileID: 900936815}
+  - component: {fileID: 900936814}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -756,7 +759,7 @@ Transform:
   m_GameObject: {fileID: 900936793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.09, y: 17.67, z: 17.93}
+  m_LocalPosition: {x: 20.64, y: 1.19, z: 16.805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1056,6 +1059,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ShootSound: {fileID: 900936812}
+--- !u!114 &900936814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900936793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a256c9e0726cd948a6957e7e07751dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &900936815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900936793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2269f9f2b991364ca31dc558c61143e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLife: 2
+--- !u!114 &900936818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900936793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b73af9a6898284aa3d7b3939b73e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerApplyMemento: {fileID: 900936815}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
