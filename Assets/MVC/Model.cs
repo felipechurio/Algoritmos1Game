@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Model : ILifeSubstract, IPlayerStats
 {
+    
+
     public float GetVelocity() => Velocity;
     public float GetJumpForce() => JumpForce;
 
@@ -22,6 +24,8 @@ public class Model : ILifeSubstract, IPlayerStats
 
     public int life = 4;
 
+    public IPlayerStats CurrentStats;
+
     public void SubtractLife()
     {
         life--;
@@ -32,14 +36,18 @@ public class Model : ILifeSubstract, IPlayerStats
     {
         if (Grounded && Jump)
         {
-            _rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            _rb.AddForce(Vector3.up * CurrentStats.GetJumpForce(), ForceMode.Impulse);
+
             Jump = false;
         }
     }
 
     public void MovePlayer(Rigidbody _rb)
     {
-        _rb.velocity = new Vector3(Xaxi * Velocity, _rb.velocity.y, Yaxi * Velocity);
+        _rb.velocity = new Vector3(Xaxi * CurrentStats.GetVelocity(), _rb.velocity.y, Yaxi * CurrentStats.GetVelocity());
+
+
+
 
     }
 }

@@ -2,28 +2,16 @@ using UnityEngine;
 
 namespace Patterns.Wrappers.Decorator
 {
-    public class VelocityPowerUp : PlayerStatsOriginal, IPowerUpApply
+    public class VelocityPowerUp : PlayerStatsOriginal
     {
-        public VelocityPowerUp (PlayerStatsOriginal previous) : base(previous)
+        public VelocityPowerUp (IPlayerStats previous) : base(previous)
         {
 
-
         }
-
-        //public override string GetDescription()
-       // {
-           // return _sword.GetDescription() + ", with Ice";
-       // }
-
-        public float Apply()
+        public override float GetVelocity()
         {
-            AppliedEffect();
-            return _Original.GetVelocity() +2;
+            return _Original.GetVelocity() +10f;
         }
 
-        public void AppliedEffect()
-        {
-            Debug.Log("Velocidad Aumentada");
-        }
     }
 }

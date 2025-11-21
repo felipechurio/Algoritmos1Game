@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public Model GetModel() => model;
     private AudioSource _Audios;
     private MeshRenderer _MeshRenderer;
     private Rigidbody _rb;
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     View _view;
 
-    Model model;
+   public Model model;
 
     Controller controller;
 
@@ -53,16 +53,24 @@ public class Player : MonoBehaviour
 
         _view = new View(_Audios, _MeshRenderer, this);
 
-         model = new Model();
+        // Primero CREAR el model
+        model = new Model();
 
-         controller = new Controller(model, _view);
+        // Ahora sí podés usarlo
+        model.CurrentStats = model;
+
+        controller = new Controller(model, _view);
     }
+
     // Update is called once per frame
     void Update()
     {
         controller.ProcessInputs();
         model.JumpPlayer(_rb);
         model.MovePlayer(_rb);
-       
+
+        Debug.Log("Velocidad actual: " + model.CurrentStats.GetVelocity());
+        Debug.Log("Salto actual: " + model.CurrentStats.GetJumpForce());
+
     }
 }
