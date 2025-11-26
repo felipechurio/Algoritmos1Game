@@ -10,7 +10,9 @@ public class VelocityPickup : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-             player.model.CurrentStats = new VelocityPowerUp(player.model.CurrentStats);
+                player.model.CurrentStats = new VelocityPowerUp(player);
+
+                //player.model.CurrentStats = new VelocityPowerUp(player.model.CurrentStats);
 
 
                 Debug.Log("VELOCIDAD AUMENTADA");
